@@ -1,0 +1,138 @@
+/*
+* @Author: web
+* @Date:   2018-12-20 21:14:51
+* @Last Modified by:   web
+* @Last Modified time: 2018-12-20 21:27:43
+*/
+
+.slideshow,
+.slideshow::after {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.slideshow::after {
+  content: "";
+}
+/*.slideshow li {}*/
+.slideshow li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  animation: imageAnimation 36s linear infinite
+}
+.slideshow li div {
+  z-index: 999;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  color: pink;
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  animation: titleAnimation 36s linear infinite
+}
+.slideshow li div h3 {
+  font-size: 180px;
+  line-height: 200px;
+}
+
+.slideshow li:nth-child(1) span {
+  background-image: url(../public/imgs/x1.jpg);
+}
+.slideshow li:nth-child(2) span {
+  background-image: url(../public/imgs/x2.jpg);
+  animation-delay: 6s;
+}
+.slideshow li:nth-child(3) span {
+  background-image: url(../public/imgs/x3.jpg);
+  animation-delay: 12s;
+}
+.slideshow li:nth-child(4) span {
+  background-image: url(../public/imgs/x4.jpg);
+  animation-delay: 18s;
+}
+.slideshow li:nth-child(5) span {
+  background-image: url(../public/imgs/x5.jpg);
+  animation-delay: 24s;
+}
+.slideshow li:nth-child(6) span {
+  background-image: url(../public/imgs/x6.jpg);
+  animation-delay: 30s;
+}
+
+.slideshow li:nth-child(2) div {
+  animation-delay: 6s;
+}
+.slideshow li:nth-child(3) div {
+  animation-delay: 12s;
+}
+.slideshow li:nth-child(4) div {
+  animation-delay: 18s;
+}
+.slideshow li:nth-child(5) div {
+  animation-delay: 24s;
+}
+.slideshow li:nth-child(6) div {
+  animation-delay: 30s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1140px) {
+  .slideshow li div h3 {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .slideshow li div h3 {
+    font-size: 60px;
+  }
+}
